@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <title>协作过程可视化工具</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="css/plugins/iCheck/custom.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/plugins/c3/c3.min.css" rel="stylesheet">
+    <link href="css/myProperty.html.css" rel="stylesheet">
+
+    <!-- Mainly scripts -->
+    <script src="js/jquery-2.1.1.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+    <!-- d3 and c3 charts -->
+    <script src="js/plugins/d3/d3.min.js"></script>
+    <script src="js/plugins/c3/c3.min.js"></script>
+
+    <!-- Peity -->
+    <script src="js/plugins/peity/jquery.peity.min.js"></script>
+
+    <!-- Custom and plugin javascript -->
+    <script src="js/inspinia.js"></script>
+    <script src="js/plugins/pace/pace.min.js"></script>
+
+    <script src="js/plugins/jquery-ui/jquery-ui.min.js"></script>
+
+    <!-- iCheck -->
+    <script src="js/plugins/iCheck/icheck.min.js"></script>
+
+    <!-- Peity d data  -->
+    <script src="js/demo/peity-demo.js"></script>
+    <script src="script/lineChart.js"></script>
+
+</head>
+<body style="background-color:#f3f3f4">
+<div class="row wrapper border-bottom white-bg page-heading" style="padding-bottom: 10px">
+    <div class="col-lg-10">
+        <h2>折线图 Line Chart</h2>
+    </div>
+    <div class="col-lg-2">
+    </div>
+</div>
+
+<div class="wrapper wrapper-content animated fadeInRight">
+<div class="row ">
+    <div class="col-sm-12">
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <h5>情绪感受</h5>
+                <button class="btn btn-xs btn-primary" style="float: right; margin-right: 10px;" onclick="allInfoMotion()">全组信息</button>
+                <button class="btn btn-xs btn-info" style="float: right;margin-right: 10px;" onclick="myInfoMotion()">我的信息</button>
+            </div>
+            <div class="ibox-content">
+                <div>
+                    <div id="lineChartMotion"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+</div>
+</body>
+</html>

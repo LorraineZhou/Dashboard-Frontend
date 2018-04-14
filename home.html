@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <title>协作过程可视化工具</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="css/plugins/iCheck/custom.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/home.html.css" rel="stylesheet">
+    <link href="css/plugins/c3/c3.min.css" rel="stylesheet">
+    <link href="css/plugins/chartist/chartist.min.css" rel="stylesheet">
+    <link href="css/radarChart.css" rel="stylesheet">
+    <!-- Mainly scripts -->
+    <script src="js/jquery-2.1.1.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="js/plugins/chartJs/Chart.min.js"></script>
+    <!-- Peity -->
+    <script src="js/plugins/peity/jquery.peity.min.js"></script>
+
+    <!-- Chartist -->
+    <script src="js/plugins/chartist/chartist.min.js"></script>
+
+    <!-- d3 and c3 charts -->
+    <script src="js/plugins/d3/d3.min.js"></script>
+    <script src="js/plugins/c3/c3.min.js"></script>
+
+    <!-- Custom and plugin javascript -->
+    <script src="js/inspinia.js"></script>
+    <script src="js/plugins/pace/pace.min.js"></script>
+
+    <script src="js/plugins/jquery-ui/jquery-ui.min.js"></script>
+
+    <!-- iCheck -->
+    <script src="js/plugins/iCheck/icheck.min.js"></script>
+
+    <!-- Peity d data  -->
+    <script src="js/demo/peity-demo.js"></script>
+
+    <script src="script/home.js"></script>
+</head>
+<body style="background-color:#f3f3f4">
+<div class="row wrapper border-bottom white-bg page-heading" style="padding-top:10px; padding-bottom: 10px">
+    <div class="col-lg-1" style="height: 40px; line-height:40px; float:right;right:1%;">
+        <button data-toggle="dropdown" class="btn btn-info dropdown-toggle" type="button">定制首页模块 <span
+                class="caret"></span></button>
+        <ul class="dropdown-menu " style="left:auto;right: 5%;">
+            <li><a href="#">
+                <div class="checkbox m-r-xs" style="margin-left: 5px;  margin-top: 5px;margin-bottom: 5px;">
+                    <input type="checkbox" id="checkbox1" style="margin-top: 6px;" checked="true">
+                    <label for="checkbox1" style="padding-left: 5px">
+                        资源使用情况
+                    </label>
+                </div>
+            </a></li>
+            <li><a href="#">
+                <div class="checkbox m-r-xs" style="margin-left: 5px;  margin-top: 5px;margin-bottom: 5px;">
+                    <input type="checkbox" id="checkbox2" style="margin-top: 6px;" checked="true">
+                    <label for="checkbox2" style="padding-left: 5px">
+                        协作探索目标
+                    </label>
+                </div>
+            </a></li>
+            <li><a href="#">
+                <div class="checkbox m-r-xs" style="margin-left: 5px;  margin-top: 5px;margin-bottom: 5px;">
+                    <input type="checkbox" id="checkbox3" style="margin-top: 6px;" checked="true">
+                    <label for="checkbox3" style="padding-left: 5px">
+                        对该主题的兴趣
+                    </label>
+                </div>
+            </a></li>
+            <li><a href="#">
+                <div class="checkbox m-r-xs" style="margin-left: 5px;  margin-top: 5px;margin-bottom: 5px;">
+                    <input type="checkbox" id="checkbox4" style="margin-top: 6px;"  checked="true">
+                    <label for="checkbox4" style="padding-left: 5px">
+                        情绪感受
+                    </label>
+                </div>
+            </a></li>
+            <!--<li><a href="#">-->
+                <!--<div class="checkbox m-r-xs" style="margin-left: 5px;  margin-top: 5px;margin-bottom: 5px;">-->
+                    <!--<input type="checkbox" id="checkbox5" style="margin-top: 6px;"checked="true" >-->
+                    <!--<label for="checkbox5" style="padding-left: 5px">-->
+                        <!--探索过程中遇到的困难-->
+                    <!--</label>-->
+                <!--</div>-->
+            <!--</a></li>-->
+            <li><a href="#">
+            <div class="checkbox m-r-xs" style="margin-left: 5px;  margin-top: 5px;margin-bottom: 5px;">
+                <input type="checkbox" id="checkbox6" style="margin-top: 6px;"checked="true" >
+                <label for="checkbox6" style="padding-left: 5px">
+                    知识分层
+                </label>
+            </div>
+        </a></li>
+            <li><a href="#">
+                <div class="checkbox m-r-xs" style="margin-left: 5px;  margin-top: 5px;margin-bottom: 5px;">
+                    <input type="checkbox" id="checkbox7" style="margin-top: 6px;"checked="true" >
+                    <label for="checkbox7" style="padding-left: 5px">
+                        发帖活跃度
+                    </label>
+                </div>
+            </a></li>
+            <li>
+                <button class="btn btn-s btn-info btn-block" onclick="selectModule()">确定</button>
+            </li>
+        </ul>
+    </div>
+
+</div>
+
+<div class="wrapper wrapper-content  animated fadeInRight">
+    <div class="row" id="sortable-view">
+        <div class="col-lg-6" style="height:1000px">
+            <div class="ibox " id="myModule1">
+                <div class="ibox-title">
+                    <h5>资源使用情况</h5>
+                    <div class="ibox-tools">
+                        <a href="columchart.html">更多 <i class="fa fa-chevron-right"></i></a>
+                    </div>
+                </div>
+                <div class="ibox-content">
+                    <div>
+                        <div id="stocked"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="ibox " id="myModule2">
+                <div class="ibox-title">
+                    <h5>协作探索目标</h5>
+                    <div class="ibox-tools">
+                        <a href="horizontalBarChart.html">更多 <i class="fa fa-chevron-right"></i></a>
+                    </div>
+                </div>
+                <div class="ibox-content" >
+                    <div id="ct-chart4" class="ct-perfect-fourth"></div>
+                </div>
+            </div>
+            <div class="ibox" id="myModule6">
+                <div class="ibox-title">
+                    <h5>知识分层</h5>
+                    <div class="ibox-tools">
+                        <a href="lineChart.html">更多 <i class="fa fa-chevron-right"></i></a>
+                    </div>
+                </div>
+                <div class="ibox-content">
+                    <div>
+                        <div id="myPieChartWork"></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-lg-6" style="height:1000px">
+            <div class="ibox" id="myModule3">
+                <div class="ibox-title">
+                    <h5>对该主题的兴趣</h5>
+                    <div class="ibox-tools">
+                        <a href="lineChart.html">更多 <i class="fa fa-chevron-right"></i></a>
+                    </div>
+                </div>
+                <div class="ibox-content">
+                    <div id="lineChartInterest"></div>
+                </div>
+            </div>
+            <div class="ibox" id="myModule4">
+                <div class="ibox-title">
+                    <h5>情绪感受</h5>
+                    <div class="ibox-tools">
+                        <a href="lineChart.html">更多 <i class="fa fa-chevron-right"></i></a>
+                    </div>
+                </div>
+                <div class="ibox-content">
+                    <div id="lineChartMotion"></div>
+                </div>
+            </div>
+            <div class="ibox" id="myModule5">
+                <!--<div class="ibox-title">-->
+                    <!--<h5>探索过程中遇到的困难</h5>-->
+                    <!--<div class="ibox-tools">-->
+                        <!--<a href="radarChart.html">更多 <i class="fa fa-chevron-right"></i></a>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <div class="ibox-content">
+                    <div>
+                        <canvas  id="radarChart"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="ibox" id="myModule7">
+                <div class="ibox-title">
+                    <h5>发帖活跃度</h5>
+                    <div class="ibox-tools">
+                        <a href="heatmap.html">更多 <i class="fa fa-chevron-right"></i></a>
+                    </div>
+                </div>
+                <div class="ibox-content">
+                    <div>
+                        <div id="heatmap"></div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <title>协作过程可视化工具</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="css/plugins/toastr/toastr.min.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!--Mainly scripts -->
+    <script src="js/jquery-2.1.1.js"></script>
+    <script src="js/jquery-ui-1.10.4.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+
+    <!-- Custom and plugin javascript -->
+    <script src="js/inspinia.js"></script>
+    <script src="js/plugins/pace/pace.min.js"></script>
+    <script src="script/index.js"></script>
+
+</head>
+<body style="background-color:#293846">
+
+
+<!--侧边栏开始-->
+<div>
+    <nav class="navbar-default navbar-static-side" role="navigation">
+        <div class="sidebar-collapse">
+            <ul class="nav metismenu" id="side-menu">
+                <li class="nav-header">
+                    <div class="dropdown profile-element">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <span class="clear"> <span class="block m-t-xs">
+                                <strong class="font-bold" id="currentUser">周钰婕</strong>
+                             </span> <span class="text-muted text-xs block " id="userRole">华师大-教育学部</span> </span> </a>
+                    </div>
+                    <div class="logo-element">
+                        IN+
+                    </div>
+                </li>
+                <li>
+                    <a data-href="home.html" onclick="pageChange(this)"><i class="fa fa-home"></i> <span
+                            class="nav-label">主页</span></a>
+                </li>
+                <li>
+                    <a data-href="form.html" onclick="pageChange(this)"><i class="fa fa-file-text"></i> <span
+                            class="nav-label">我的探究计划</span></a>
+                </li>
+                <li>
+                    <a href="javascript: void(0)"><i class="fa fa-area-chart"></i> <span class="nav-label">信息可视化</span> <span
+                            class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level collapse">
+                        <li><a data-href="columChart.html" onclick="pageChange(this)">资源使用情况</a></li>
+                        <li><a data-href="horizontalBarChart.html" onclick="pageChange(this)">协作探索目标</a></li>
+                        <li><a data-href="lineChart.html" onclick="pageChange(this)">对协作主题的兴趣</a></li>
+                        <li><a data-href="lineChart2.html" onclick="pageChange(this)">情绪感受</a></li>
+                        <li><a data-href="pieChart.html" onclick="pageChange(this)">知识分层</a></li>
+                        <li><a data-href="radarChart.html" onclick="pageChange(this)">协作过程中遇到的困难</a></li>
+                        <li><a data-href="heatmap.html" onclick="pageChange(this)">发帖活跃度</a></li>
+                    </ul>
+                </li>
+
+            </ul>
+
+        </div>
+    </nav>
+</div>
+<!--侧边栏结束-->
+<!--header开始-->
+<div style="background-color: #f3f3f4;height: 60px;">
+    <ul class="nav navbar-top-links navbar-right">
+        <li>
+            <span class="m-r-sm text-muted welcome-message">协作学习信息可视化</span>
+        </li>
+
+        <li class="dropdown">
+            <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
+                <i class="fa fa-bell"></i>
+                <!--<span class="label label-primary">3</span>-->
+            </a>
+            <!--<ul class="dropdown-menu dropdown-alerts">-->
+                <!--<li>-->
+                    <!--<a href="mailbox.html">-->
+                        <!--<div>-->
+                            <!--<i class="fa fa-envelope fa-fw"></i> [通知]这是一条新通知!-->
+                            <!--<span class="pull-right text-muted small">4 minutes ago</span>-->
+                        <!--</div>-->
+                    <!--</a>-->
+                <!--</li>-->
+                <!--<li class="divider"></li>-->
+                <!--<li>-->
+                    <!--<a href="profile.html">-->
+                        <!--<div>-->
+                            <!--<i class="fa fa-envelope fa-fw"></i> [通知]这是一条新通知!-->
+                            <!--<span class="pull-right text-muted small">12 minutes ago</span>-->
+                        <!--</div>-->
+                    <!--</a>-->
+                <!--</li>-->
+                <!--<li class="divider"></li>-->
+                <!--<li>-->
+                    <!--<a href="grid_options.html">-->
+                        <!--<div>-->
+                            <!--<i class="fa fa-envelope fa-fw"></i> [通知]这是一条新通知!-->
+                            <!--<span class="pull-right text-muted small">14 minutes ago</span>-->
+                        <!--</div>-->
+                    <!--</a>-->
+                <!--</li>-->
+                <!--<li class="divider"></li>-->
+                <!--<li>-->
+                    <!--<div class="text-center link-block">-->
+                        <!--<a href="notifications.html">-->
+                            <!--<strong>查看更多通知</strong>-->
+                            <!--<i class="fa fa-angle-right"></i>-->
+                        <!--</a>-->
+                    <!--</div>-->
+                <!--</li>-->
+            <!--</ul>-->
+        </li>
+
+
+        <li>
+            <a href="http://sso.rajax.me/auth/entry">
+                <i class="fa fa-sign-out"></i> Log out
+            </a>
+        </li>
+    </ul>
+</div>
+<!--header结束-->
+<!--iframe开始-->
+<div class="gray-bg" style=" background-color: #293846; padding-left: 220px; border: 0">
+    <iframe id="iFrame" name="iFrame" src=""
+            style="height:1000px; background-color:#f3f3f4; width: 100%; border: 0"></iframe>
+</div>
+<!--iframe结束-->
+
+</body>
+</html>
