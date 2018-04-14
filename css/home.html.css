@@ -1,0 +1,45 @@
+@media (min-width: 800px){
+    .col-lg-6 {
+        width: 50%;
+        float:left;
+    }
+    .col-lg-4 {
+        width: 33.33333333%;
+        float:left;
+    }
+}
+.p-lg {
+    padding: 10px;
+}
+
+.demo--label{margin:20px 20px 0 0;display:inline-block}
+.demo--radio{display:none}
+.demo--radioInput{background-color:#fff;border:1px solid rgba(0,0,0,0.15);border-radius:100%;display:inline-block;height:16px;margin-right:10px;margin-top:-1px;vertical-align:middle;width:16px;line-height:1}
+.demo--radio:checked + .demo--radioInput:after{background-color:#57ad68;border-radius:100%;content:"";display:inline-block;height:12px;margin:2px;width:12px}
+.demo--checkbox.demo--radioInput,.demo--radio:checked + .demo--checkbox.demo--radioInput:after{border-radius:0}
+
+.myProperty{
+    width:50%;
+    float: left;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.comingSoon{
+    margin-top: 20px;
+
+}
+.vertical-timeline-content .btn-success:hover{
+    background-color: #1c84c6;
+    border-color: #1c84c6;
+    color: #FFFFFF;
+}
+.vertical-timeline-content .btn-primary:hover{
+    background-color: #1ab394;
+    border-color: #1ab394;
+    color: #FFFFFF;
+}
+.vertical-timeline-content .btn-info:hover{
+    background-color: #23c6c8;
+    border-color: #23c6c8;
+    color: #FFFFFF;
+}
